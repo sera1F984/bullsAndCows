@@ -96,7 +96,7 @@ public class BullsAndCows {
     public void messageGenerator(int length, int possibleSymbols) {
         if (possibleSymbols <= 10) {
             System.out.println("The secret is prepared: " + printStars(length) + " " +
-                    "(0-" + Character.forDigit(9, possibleSymbols) + ").");
+                    "(0-" + possibleSymbols + ").");
         } else {
             System.out.println("The secret is prepared: " + printStars(length) +
                     " (0-" + Character.forDigit(9, possibleSymbols) +
@@ -107,7 +107,7 @@ public class BullsAndCows {
     public String generateWithSymbols(int length, int possibleSymbols) {
         StringBuilder sb = new StringBuilder();
         while (sb.length() < length) {
-            String c = String.valueOf(Character.forDigit(rand.nextInt(possibleSymbols) + 1, possibleSymbols));
+            String c = String.valueOf(Character.forDigit(rand.nextInt(possibleSymbols), possibleSymbols));
             if (sb.toString().contains(c)) {
                 continue;
             }
